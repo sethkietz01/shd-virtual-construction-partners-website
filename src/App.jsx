@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -12,7 +13,12 @@ function App() {
         <div className="title">
           <h1>SHD Virtual Construction Partners</h1>
         </div>
-        <div className="navbar">
+
+        <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          Menu
+        </button>
+
+        <div className={`navbar ${isMenuOpen ? 'show' : ''}`}>
           <nav>
             <p>Placeholder</p> 
             <p className="divider">|</p>

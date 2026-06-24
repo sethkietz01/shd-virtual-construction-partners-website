@@ -14,6 +14,7 @@ body {
   background-color: #264D73;
   color: #fff;
   background-image: url('./assets/header-background.jpg');
+  width: 100vw;
 }
 
   .header h1 {
@@ -45,6 +46,7 @@ nav {
 .overview h1 {
   text-decoration: underline;
   margin-bottom: 0px;
+  margin-left: 12px;
 }
 
 .overview-text {
@@ -66,7 +68,7 @@ nav {
 .footer {
   margin-top: auto;
   background-color: #666666;
-  width: 100%;
+  width: 100vw;
   color: white;
   display: flex;
   align-items: center;
@@ -79,3 +81,60 @@ nav {
     margin: 8px;
     font-size: 24px;
   }
+
+/* Hide menu button by default on desktop */
+.menu-toggle {
+  display: none;
+}
+
+  /* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* Show the toggle button on mobile */
+  .menu-toggle {
+    display: block;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+
+  /* Hide the navbar by default on mobile */
+  .navbar {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* When the 'show' class is added via React state, display the nav */
+  .navbar.show {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  
+  /* Stack the header vertically instead of horizontally */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Make the overview text take up full width minus margins */
+  .overview-text {
+    width: 90vw;
+  }
+
+  /* Force the large sample image to fit the mobile screen width */
+  .image-container img {
+    max-width: 90vw;
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  /* Stack the footer elements vertically */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+  }
+}
