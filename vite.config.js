@@ -4,7 +4,7 @@ import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/shd-virtual-construction-partners-website/', 
+  base: '/shd-vcp-site/', 
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
