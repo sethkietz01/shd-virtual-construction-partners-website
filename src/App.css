@@ -20,7 +20,13 @@ body {
   align-items: center;
   background-color: #264D73;
   color: #fff;
+  
+  /* Background styling */
   background-image: url('./assets/header-background.jpg');
+  background-size: cover;          /* Scales the image to cover the full area */
+  background-repeat: no-repeat;    /* Prevents the image from tiling */
+  background-position: center;     /* Centers the image within the header */
+  
   border-bottom: 1px solid black;
 }
 

@@ -193,8 +193,11 @@ const resultPoints = [
               <h3>The SHD Flow</h3>
               <div className="steps">
                 <span>Model</span>
+                →
                 <span>Spool</span>
+                →
                 <span>Prefab</span>
+                →
                 <span>Install</span>
               </div>
               <p>We convert models into production-ready packages, not just visualization.</p>
