@@ -65,6 +65,12 @@ body {
   margin-right: 15px;
 }
 
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
 nav {
   display: flex;
   gap: 10px;
@@ -373,7 +379,6 @@ nav {
 
 .hero-section {
   padding: 80px 20px;
-  background: #f8fafc; 
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -429,6 +434,8 @@ h3 {
   display: flex;
   align-items: flex-end; 
   padding: 40px;
+
+  display: none;
 }
 
 .portfolio-showcase::before {
@@ -683,39 +690,9 @@ h3 {
   background: #264D73; /* Your Brand Blue */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.contact-link {
+  margin-right: 32px;
+}
 
 /* ==========================================================================
    4. Instagram Carousel Component

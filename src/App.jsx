@@ -76,14 +76,16 @@ const resultPoints = [
         </button>
 
         <div className={`navbar ${isMenuOpen ? 'show' : ''}`}>
-          <nav>
-            <p>Placeholder</p> 
+          <nav className="navbar">
+            <a href="" className="contact-link">Contact Us</a> 
+            {/*
             <p className="divider">|</p>
             <p>Placeholder</p>
             <p className="divider">|</p>
             <p>Placeholder</p>
             <p className="divider">|</p>
             <p>Placeholder</p>
+            */}
           </nav>
         </div>
       </div>
@@ -423,10 +425,14 @@ const resultPoints = [
         </div>
 
         <div className="contact">
+        {/*
+
           <p>Address</p>
           <p>Lexington, KY</p>
           <p>Phone Number</p>
           <p>Email</p>
+        */}
+
         </div>
       </div>
     </>
