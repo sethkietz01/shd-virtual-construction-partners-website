@@ -10,29 +10,19 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const portfolioImages = [sampleImage, sampleImage2, sampleImage3];
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   const trackRef = useRef(null);
 
   const handleScroll = (direction) => {
-    if (trackRef.current) {
-      const track = trackRef.current;
-      const slideWidth = track.clientWidth; 
-
-      if (direction === 'next') {
-        if (track.scrollLeft + slideWidth >= track.scrollWidth - 5) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: slideWidth, behavior: 'smooth' });
-        }
-      } else if (direction === 'prev') {
-        if (track.scrollLeft <= 5) {
-          track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-        }
-      }
-    }
-  };
+  if (direction === 'next') {
+    setCurrentIndex((prev) => (prev + 1) % portfolioImages.length);
+  } else {
+    setCurrentIndex((prev) => (prev - 1 + portfolioImages.length) % portfolioImages.length);
+  }
+};
 
   const problems = [
   { title: "Communication", desc: "Crews waiting on incomplete or unclear information." },
@@ -168,13 +158,33 @@ const resultPoints = [
         </section>
         
 
-        <section className="portfolio-showcase">
-          <div className="portfolio-content">
+        <section className="portfolio-showcase" style={{ position: 'relative', overflow: 'hidden' }}>
+          {portfolioImages.map((img, index) => (
+            <motion.img 
+              key={index}
+              src={img}
+              animate={{ opacity: currentIndex === index ? 1 : 0 }}
+              style={{
+                position: 'absolute',
+                top: 0, left: 0, width: '100%', height: '100%',
+                objectFit: 'cover',
+                zIndex: 0
+              }}
+            />
+          ))}
+
+          <div className="gradient-overlay"></div>
+
+          <div className="portfolio-content" style={{ position: 'relative', zIndex: 2 }}>
             <div className="text-overlay">
               <h2>Project Name</h2>
-              <p>Highlighting complex coordination and prefabrication workflows.</p>
               <button className="view-case-study">View Case Study</button>
             </div>
+          </div>
+
+          <div className="portfolio-controls" style={{ zIndex: 3 }}>
+            <button onClick={() => handleScroll('prev')}>❮</button>
+            <button onClick={() => handleScroll('next')}>❯</button>
           </div>
         </section>
 
@@ -398,37 +408,7 @@ const resultPoints = [
         </div>
       </div>
 
-      <h1 className="carousel-header">Sample</h1>
-
-      <div className="carousel-container">
-        <div className="carousel-track" ref={trackRef}>
-          
-          <div className="slide">
-            <img src={sampleImage} alt="Slide 1" />
-            <div className="carousel-controls">
-              <button onClick={() => handleScroll('prev')} className="prev-btn">❮</button>
-              <button onClick={() => handleScroll('next')} className="next-btn">❯</button>
-            </div>
-          </div>
-
-          <div className="slide">
-            <img src={sampleImage2} alt="Slide 2" />
-            <div className="carousel-controls">
-              <button onClick={() => handleScroll('prev')} className="prev-btn">❮</button>
-              <button onClick={() => handleScroll('next')} className="next-btn">❯</button>
-            </div>
-          </div>
-
-          <div className="slide">
-            <img src={sampleImage3} alt="Slide 3" />
-            <div className="carousel-controls">
-              <button onClick={() => handleScroll('prev')} className="prev-btn">❮</button>
-              <button onClick={() => handleScroll('next')} className="next-btn">❯</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      
 
       <div className="footer">
         <div className="socials">
