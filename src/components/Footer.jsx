@@ -23,6 +23,7 @@ const Footer = () => {
             <p>Lexington, KY</p>
             <p>Phone Number</p>
             <p>Email</p>
+            
             */}
 
             </div>

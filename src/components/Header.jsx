@@ -7,15 +7,17 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="logo">
-        <Link to="/">
-          <img src={logo} width="90px" alt="Logo" />
-        </Link>
-      </div>
-      
-      <div className="title">
-        <Link to="/">SHD Virtual Construction Partners</Link>
-        <h2> | From Model to Field Execution</h2>
+      <div className="header-top">
+        <div className="logo">
+          <Link to="/">
+            <img src={logo} width="90px" alt="Logo" />
+          </Link>
+        </div>
+        
+        <div className="title">
+          <Link to="/">SHD Virtual Construction Partners</Link>
+          <h2> | From Model to Field Execution</h2>
+        </div>
       </div>
 
       <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -23,9 +25,7 @@ const Header = () => {
       </button>
 
       <div className={`navbar ${isMenuOpen ? 'show' : ''}`}>
-        <nav className="navbar">
-          <Link to="/contact" className="contact-link">Contact Us</Link>
-        </nav>
+        <Link to="/contact" className="contact-link">Contact Us</Link>
       </div>
     </div>
   );

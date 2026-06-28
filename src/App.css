@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   background: #f1f5f9;
+  overflow-x: hidden;
 }
 
 /* ==========================================================================
@@ -18,11 +19,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
   background-color: #264D73;
   color: #fff;
   background-image: url('./assets/header-background.jpg');
   background-size: cover; 
-  background-repeat: no-repeat; 
   background-position: center; 
   border-bottom: 1px solid black;
   position: sticky;
@@ -60,11 +61,12 @@ body {
 
 .brand {
   display: flex;
+  align-items: center;
 }
 
 .navbar {
   display: flex;
-  margin-right: 15px;
+  gap: 20px;
 }
 
 .navbar a {
@@ -84,6 +86,11 @@ nav {
 
 .menu-toggle {
   display: none;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 15px;
+  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -109,33 +116,6 @@ nav {
   display: flex;
   flex-direction: column;
 }
-
-.hook-heading {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  position: relative;
-}
-
-  .hook-heading h1 {
-    margin-bottom: 0px;
-  }
-
-  .hook-heading h2 {
-    margin-top: 0px;
-  }
-
-  .hook-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 4px;
-    background-color: #264D73;
-  }
 
 .hook-head-container {
   background-color: rgba(255, 255, 255, 0.75);
@@ -170,13 +150,11 @@ nav {
   box-shadow: 0 10px 20px rgba(38, 77, 115, 0.2);
 }
 
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-
 
 .list-ending {
   margin-left: 24px;
@@ -190,7 +168,6 @@ nav {
   margin-top: 0;
   margin-bottom: 64px;
 }
-
 
 .section-header {
   position: relative;
@@ -208,14 +185,9 @@ nav {
   background-color: #264D73;
 }
 
-
-
-
-
-
 .hero-section {
-  padding: 0 20px;
-  min-height: 60vh;
+  padding: 40px 20px;
+  min-height: 50vh;
   display: flex;
   align-items: center;
 }
@@ -223,13 +195,13 @@ nav {
 .hero-content {
   max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   line-height: 1.1;
-  margin-bottom: 3rem;
-  color: #0f172a;
+  margin-bottom: 2rem;
 }
 
 .text-highlight {
@@ -238,7 +210,7 @@ h1 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 40px;
 }
 
@@ -301,14 +273,17 @@ h3 {
 
 .flow-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .side-column {
   flex: 1;
+  min-width: 280px;
   padding: 2rem;
   border-radius: 12px;
   background: #e7e7e7;
@@ -386,7 +361,7 @@ h3 {
 .deliverables-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px; /* Generous gap for breathing room */
+  gap: 40px;
   padding: 4rem 0;
 }
 
@@ -484,12 +459,12 @@ h3 {
 }
 
 .summary-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .summary-col {
@@ -808,30 +783,47 @@ h3 {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    background: none;
-    color: white;
-    border: 1px solid white;
-    padding: 5px 15px;
-    cursor: pointer;
+    margin: 0 auto 10px auto;
   }
 
   .navbar {
     display: none;
+    position: relative; 
     width: 100%;
+    background: #264D73;
+    display: none; 
+    flex-direction: column;
     text-align: center;
+    padding: 10px 0;
   }
 
   .navbar.show {
     display: flex;
-    flex-direction: column;
-    padding-top: 10px;
   }
   
   .header {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-    width: 100vw;
+    flex-direction: column; 
+    align-items: center;
+    padding: 15px;
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px; 
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title h2 {
+    font-size: 0.9rem; 
+    line-height: 1.2;
   }
 
   .overview-text {
@@ -854,11 +846,39 @@ h3 {
     margin-right: auto;
   }
 
+  .hero-section { 
+    min-height: auto; 
+    padding: 40px 20px; 
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .approach-grid {
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .summary-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner h2 { 
+    font-size: 1.8rem; 
+  }
+
+  .contact-form {
+    padding: 10px;
+    max-width: 75vw;
+  }
+
+  .side-column {
+    max-width: 75vw;
+    min-width: 50vw;
+  }
+
+  .steps {
     flex-direction: column;
   }
 }
