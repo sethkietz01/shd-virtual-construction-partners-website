@@ -87,8 +87,6 @@ nav {
 /* ==========================================================================
    3. Main Content / Overview
    ========================================================================== */
-
-
 .image-container {
   margin-bottom: 150px;
 }
@@ -145,66 +143,6 @@ nav {
   display: none;
 }
 
-.two-column {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch; 
-  justify-content: center;
-  gap: 40px; 
-  width: 100%;
-  max-width: 800px; 
-  border-bottom: 1px solid black;
-}
-
-.column-one, 
-.column-two {
-  flex: 1;
-  text-align: center;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-}
-
-.column-seperator {
-  width: 1px;
-  background-color: black;
-}
-
-
-.core-deliverables-text {
-  text-align: center;
-}
-
-.problems-we-solve-header, .our-approach-header {
-  text-align: center; 
-}
-
-.problems-we-solve, 
-.our-approach {
-  margin: 0;
-  display: flex;
-  flex-direction: column; 
-  height: auto;  
-}
-
-.approach-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 12px;
-  align-items: stretch; 
-  display: none;
-}
-
-.problems-we-solve, 
-.our-approach {
-  margin: 0;
-}
-
 .value-prop-container {
   display: flex;
   gap: 20px;
@@ -237,66 +175,9 @@ nav {
   gap: 30px;
 }
 
-.deliv-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.85); 
-    backdrop-filter: blur(10px);
-}
-
-.deliv-card-blue {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #264D73;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  font-size: 18px;
-  padding: 20px 20px;
-  color: white;
-  height: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-  .deliv-card-blue p {
-    margin: 0px;
-  }
-
-.deliverables {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 20px;
-  border-radius: 8px;
-  display: none;
-}
 
 .list-ending {
   margin-left: 24px;
-}
-
-.closing {
-  margin: 0 auto;
-  margin-bottom: 68px;
-  color: white;
-  background-color: #264D73;
-  padding: 20px;
-  border-radius: 8px;
-  display: none;
-}
-
-.cta h2 {
-  margin-bottom: 0;
-}
-
-.cta p {
-  margin-top: 0;
 }
 
 .signature h3 {
@@ -306,29 +187,6 @@ nav {
 .signature p {
   margin-top: 0;
   margin-bottom: 64px;
-}
-
-.prop-card, .deliv-card, .deliv-card-blue {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.prop-card:hover, .deliv-card:hover, .deliv-card-blue:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.prop-card, .deliv-card, .devliv-card-blue {
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
-  border: none;
-}
-
-.portfolio-piece-1 {
-  margin: 60px auto;
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 20px;
-  border-radius: 8px;
-  display: none;
 }
 
 
@@ -554,7 +412,6 @@ h3 {
   font-size: 0.9rem;
 }
 
-/* Layout for the "Why SHD" and "Result" section */
 .summary-container {
   display: flex;
   justify-content: space-between;
@@ -568,7 +425,6 @@ h3 {
   flex: 1;
 }
 
-/* The Closer/CTA Banner */
 .cta-banner {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   color: white;
