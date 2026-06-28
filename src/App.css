@@ -130,6 +130,29 @@ nav {
   display: none;
 }
 
+.hero-cta {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.primary-cta-button {
+  background: #fbbf24;
+  color: #0f172a;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+.primary-cta-button:hover {
+  transform: scale(1.05);
+  background: #f59e0b;
+}
+
 .value-prop-container {
   display: flex;
   gap: 20px;
@@ -497,7 +520,7 @@ h3 {
 }
 
 .cta-button {
-  background: #fbbf24; /* A warm accent color to stand out against the blue */
+  background: #fbbf24;
   color: #0f172a;
   padding: 15px 35px;
   border: none;

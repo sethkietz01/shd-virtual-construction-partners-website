@@ -82,9 +82,14 @@ const resultPoints = [
                 <p>We bridge the gap from modeling to field-ready installation, delivering packages that reduce labor and maximize prefabrication.</p>
               </div>
             </div>
+
+            <div className="hero-cta">
+              <Link to="/contact" className="primary-cta-button">
+                Talk to our Experts
+              </Link>
+            </div>
           </div>
         </section>
-        
 
         <section className="portfolio-showcase" style={{ position: 'relative', overflow: 'hidden' }}>
           {portfolioImages.map((img, index) => (
@@ -197,9 +202,7 @@ const resultPoints = [
             ))}
           </section>
         </div>
-
-        
-
+ 
         <section className="summary-container">
           <div className="summary-col why-shd">
             <h3>Why SHD</h3>
