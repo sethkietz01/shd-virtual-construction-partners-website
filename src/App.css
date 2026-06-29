@@ -744,12 +744,6 @@ h3 {
   margin-left: auto;
 }
 
-.footer a {
-  color: lightskyblue;
-  margin: 8px;
-  font-size: 24px;
-}
-
 .socials, .copyright, .about {
   flex: 1;
   display: flex;
@@ -759,7 +753,7 @@ h3 {
   justify-content: flex-start; 
   flex-direction: column;
   font-size: 18px;
-  margin-left: 18px !important;
+  margin-left: 18px;
 }
 
 .copyright { 
@@ -780,7 +774,7 @@ h3 {
 }
 
 .privacy-section {
-  margin-right: auto;
+  margin: auto auto;
 }
 
 .contact-heading {
@@ -926,6 +920,16 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-card,
+  .problem-card:nth-child(4),
+  .problem-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .cta-banner h2 { 
     font-size: 1.8rem; 
   }
@@ -942,5 +946,22 @@ h3 {
 
   .steps {
     flex-direction: column;
+  }
+
+  .footer {
+    flex-direction: column; /* Stacks children vertically */
+    text-align: center;      /* Centers text */
+    gap: 15px;               /* Adds space between stacked items */
+  }
+
+  .footer div {
+    margin-left: 0;          /* Reset the auto margin for centered layout */
+  }
+
+  .socials, .copyright, .about {
+    justify-content: center; /* Centers items horizontally */
+    width: 100%;             /* Ensures full width alignment */
+    margin-left: auto;
+    margin-right: auto;
   }
 }

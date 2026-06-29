@@ -1,18 +1,12 @@
-# React + Vite
+# SHD Virtual Construction Partners Website
+This is the official website for SHD Virtual Construction Partners, a BIM/VDC company that is 100% U.S. based and headquartered in Lexington, Kentucky.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Hosting
+The site is currently hosted on GitHub Pages. You may view the website using this link: https://sethkietz01.github.io/shd-vcp-site/
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Tech Stack
+* Framework: React
+* Styling: Custom CSS
+* Animations: Framer Motion
+* Routing: React Router
+* Build Tool: Vite
