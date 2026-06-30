@@ -43,6 +43,44 @@ const RESULT_POINTS = [
   "Better material control"
 ];
 
+const CONTAINER_VARIANTS = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4
+    }
+  }
+};
+
+const ITEM_VARIANTS = {
+  hidden: { opacity: 0 }, 
+  visible: { 
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" } 
+  }
+};
+
+const DELAY_CONTAINER_VARIANTS = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5, 
+      staggerChildren: 0.5 
+    }
+  }
+};
+
+const DELAY_ITEM_VARIANTS = {
+  hidden: { opacity: 0 }, 
+  visible: { 
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" } 
+  }
+};
+
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -61,29 +99,37 @@ function App() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
             Built for Contractors.<br /> 
             <span className="text-highlight">Driven by the Field.</span>
           </motion.h1>
 
-          <div className="hero-grid">
-            <div className="status-quo">
-              <h3>The Status Quo</h3>
-              <p>Most BIM firms stop at coordination. We see it as only the beginning.</p>
+          <motion.div 
+            variants={DELAY_CONTAINER_VARIANTS}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="hero-motion-container"
+          >
+            <div className="hero-grid">
+              <motion.div variants={DELAY_ITEM_VARIANTS} className="status-quo">
+                <h3>The Status Quo</h3>
+                <p>Most BIM firms stop at coordination. We see it as only the beginning.</p>
+              </motion.div>
+              
+              <motion.div variants={DELAY_ITEM_VARIANTS} className="shd-advantage">
+                <h3>The SHD Advantage</h3>
+                <p>We bridge the gap from modeling to field-ready installation...</p>
+              </motion.div>
             </div>
-            
-            <div className="shd-advantage">
-              <h3>The SHD Advantage</h3>
-              <p>We bridge the gap from modeling to field-ready installation, delivering packages that reduce labor and maximize prefabrication.</p>
-            </div>
-          </div>
 
-          <div className="hero-cta">
-            <Link to="/contact" className="primary-cta-button">
-              Talk to our Experts
-            </Link>
-          </div>
+            <motion.div variants={DELAY_ITEM_VARIANTS} className="hero-cta">
+              <Link to="/contact" className="primary-cta-button">
+                Talk to our Experts
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -122,7 +168,12 @@ function App() {
       </section>
 
       <section className="problem-solution-section">
-        <div className="flow-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 1.2 }}
+          className="flow-container"
+        >
           <div className="side-column problem">
             <h3>The Friction</h3>
             <p>Coordination gaps lead to field rework, material waste, and crews waiting for clarity.</p>
@@ -139,11 +190,17 @@ function App() {
             </div>
             <p>We convert models into production-ready packages, not just visualization.</p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="who-we-are">
-        <div className="who-we-are-container">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8 }}
+          className="who-we-are-container"
+        >
           <h1 className="section-header">Who We Are</h1>
           
           <div className="shd-philosophy">
@@ -167,54 +224,96 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="problems-we-solve-container">
-        <h2 className="section-header">The Problems We Solve</h2>
-        <div className="problem-grid">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="section-header">The Problems We Solve</h2>
+        </motion.div>
+        <motion.div 
+          variants={CONTAINER_VARIANTS}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="problem-grid"
+        >
           {PROBLEMS.map((item) => (
-            <div key={item.id} className="problem-card">
+            <motion.div key={item.id} variants={ITEM_VARIANTS} className="problem-card">
               <div className="card-indicator" /> 
               <h4>{item.title}</h4>
               <p>{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <div className="deliverables-container">
-        <h2 className="section-header">Deliverables</h2>
-        <section className="deliverables-grid">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="section-header">Deliverables</h2>
+        </motion.div>
+        <motion.section 
+          variants={CONTAINER_VARIANTS}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="deliverables-grid"
+        >
           {DELIVERABLES.map((d) => (
-            <motion.div key={d.id} className="deliverable-card" whileHover={{ y: -5 }}>
+            <motion.div 
+              key={d.id} 
+              variants={ITEM_VARIANTS} 
+              className="deliverable-card" 
+              whileHover={{ y: -5 }}
+            >
               <div className="card-indicator" /> 
               <h3>{d.title}</h3>
-              {/* Using text items combined with indices safely for static sublists */}
               <ul>
                 {d.details.map((detail, index) => <li key={`${d.id}-det-${index}`}>{detail}</li>)}
               </ul>
               <p className="note">{d.note}</p>
             </motion.div>
           ))}
-        </section>
+        </motion.section>
       </div>
 
-      <section className="summary-container">
-        <div className="summary-col why-shd">
-          <h3>Why SHD</h3>
-          <ul>
-            {WHY_POINTS.map((point, i) => <li key={`why-${i}`}>{point}</li>)}
-          </ul>
-        </div>
-        
-        <div className="summary-col the-result">
-          <h3>The Result</h3>
-          <ul className="results-list">
-            {RESULT_POINTS.map((point, i) => <li key={`res-${i}`}>{point}</li>)}
-          </ul>
-        </div>
-      </section>
+
+      <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8 }}
+          className="summary-motion-container"
+        >
+        <section className="summary-container">
+
+          
+            <div className="summary-col why-shd">
+              <h3>Why SHD</h3>
+              <ul>
+                {WHY_POINTS.map((point, i) => <li key={`why-${i}`}>{point}</li>)}
+              </ul>
+            </div>
+            
+            <div className="summary-col the-result">
+              <h3>The Result</h3>
+              <ul className="results-list">
+                {RESULT_POINTS.map((point, i) => <li key={`res-${i}`}>{point}</li>)}
+              </ul>
+            </div>
+        </section>
+      </motion.div>
+
 
       <section className="closing-container">
         <div className="cta-banner">
